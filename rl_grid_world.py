@@ -22,15 +22,15 @@ import numpy as np
 import random as rnd
 
 N = 5   #grid size
-r_total = 0  # total rewards
+
 
 
 class GridCell():
-    def __init__(self):
+    def __init__(self, r, c):
         actions = ['n', 'e', 'w', 's']
         # what else do you need?
-        row = 0
-        col = 0
+        row = r
+        col = c
 
 
     def get_reward(action):
@@ -69,5 +69,5 @@ if __name__ == '__main__':
     for i in range(N):
         grid.append([])
         for j in range(N):
-            grid[i].append(GridCell())
+            grid[i].append(GridCell(i,j))
             print(grid[i][j], end=' ')
